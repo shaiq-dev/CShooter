@@ -1,0 +1,55 @@
+{
+  "name": "cshooter",
+  "version": "1.0.0",
+  "description": "Particle Shooting Game",
+  "main": "index.js",
+  "author": "Shaiq Kar",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "eslint": "eslint 'src/**/*.ts'",
+    "eslint:fix": "eslint --fix 'src/**/*.ts'",
+    "prettier": "prettier 'src/**/*.ts'",
+    "prettier:fix": "prettier --write 'src/**/*.ts'",
+    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build:prod": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false webpack --mode production",
+    "start": "webpack-dashboard -- webpack"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.31.0",
+    "@typescript-eslint/parser": "4.31.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.3.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "7.0.2",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "lint-staged": "11.1.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "prettier": "2.4.0",
+    "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.2.4",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.2",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dashboard": "^3.3.6",
+    "webpack-dev-server": "^4.2.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
